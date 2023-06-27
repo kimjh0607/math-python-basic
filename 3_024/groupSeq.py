@@ -7,20 +7,24 @@ inputN = int(input('enter number : '))
 flag = True
 n = 1
 nCnt = 1
-searchN = 0
+searchNC = 0
+searchNP = 0
 
 while flag:
 
     for i in range(1, (n+1)):
-        print(f'{i} ', end='')
+        print(f'{i}/{n-i+1},', end='')
 
         nCnt += 1
 
         if (nCnt > inputN):
-            searchN = i
+            searchNC = i
+            searchNP = n-i+1
+
             flag = False
             break
 
     print()
     n += 1
-print(f'{inputN}항 : {searchN}')
+
+print(f'{inputN}항 : {searchNC}.{searchNP}')
